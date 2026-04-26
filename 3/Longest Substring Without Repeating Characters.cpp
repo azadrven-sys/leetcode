@@ -1,12 +1,19 @@
 class Solution {
+    int maxLength;
+    int start;
+    int slen;
+    char currentChar;
+    int end;
 public:
     int lengthOfLongestSubstring(string s) {
         vector<int> lastIndex(128, -1);
-        int maxLength = 0;
-        int start = 0;
-        int slen = s.length();
-        for (int end = 0; end < slen; ++end) {
-            char currentChar = s[end];
+        maxLength = 0;
+        start = 0;
+        slen = s.length();
+        currentChar;
+        end;
+        for (end = 0; end < slen; ++end) {
+            currentChar = s[end];
             if (lastIndex[currentChar] >= start) {
                 start = lastIndex[currentChar] + 1;
                 }
