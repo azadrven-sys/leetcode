@@ -10,8 +10,6 @@ public:
         maxLength = 0;
         start = 0;
         slen = s.length();
-        currentChar;
-        end;
         for (end = 0; end < slen; ++end) {
             currentChar = s[end];
             if (lastIndex[currentChar] >= start) {
