@@ -1,14 +1,27 @@
 class Solution {
+    int* nums1data;
+    int* nums2data;
+    int nums1Size;
+    int nums2Size;
+    int totalSize;
+    int* totalp;
+    int i = 0;
+    int j = 0;
+    int maxn = 0;
+    double ret;
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        int* nums1data = nums1.data();
-        int* nums2data = nums2.data();
-        int nums1Size = nums1.size();
-        int nums2Size = nums2.size();
-        int totalSize = nums1Size + nums2Size;
+        nums1data = nums1.data();
+        nums2data = nums2.data();
+        nums1Size = nums1.size();
+        nums2Size = nums2.size();
+        totalSize = nums1Size + nums2Size;
         int total[totalSize];
-        int* totalp = &total[0];
-        int i = 0, j = 0, maxn = 0;
+        totalp = &total[0];
+        i = 0;
+        j = 0;
+        maxn = 0;
+        ret;
         while (i < nums1Size || j < nums2Size) {
             if (i < nums1Size) {
                 if (j >= nums2Size || *nums1data < *nums2data) {
@@ -24,7 +37,6 @@ public:
             nums2data++;
             totalp++;
             }
-        double ret;
         if (totalSize % 2 == 1) {
             ret = total[totalSize / 2];
             }
