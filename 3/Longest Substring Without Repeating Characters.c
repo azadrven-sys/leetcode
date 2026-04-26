@@ -1,15 +1,21 @@
 #include <string.h>
+int n;
+int last_index[128];
+unsigned char* c;
+int max_len;
+int left;
+int min;
+int right;
+int size = sizeof(int) * 128;
 int lengthOfLongestSubstring(char* s) {
-    int n = strlen(s);
+    n = strlen(s);
     if (n == 0) return 0;
-    int last_index[128];
-    memset(last_index, -1, sizeof(last_index));
-    unsigned char* c = s;
-    int max_len = 0;
-    int left = 0;
-    int min;
+    memset(last_index, -1, size);
+    c = s;
+    max_len = 0;
+    left = 0;
     unsigned char current_char;
-    for (int right = 0; right < n; right++) {
+    for (right = 0; right < n; right++) {
         current_char = *c;
         if (last_index[current_char] >= left) {
             left = last_index[current_char] + 1;
