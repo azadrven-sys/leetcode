@@ -1,10 +1,12 @@
 class Solution {
+    ListNode* dummy = new ListNode(0); // dummy node
+    ListNode* curr;
+    int carry;
+    int sum;
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* dummy = new ListNode(0);
-        ListNode* curr = dummy;
-        int carry = 0;
-        int sum;
+        curr = dummy;
+        carry = 0;
         while (l1 || l2 || carry) {
             sum = carry;
             if (l1) {
